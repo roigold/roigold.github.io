@@ -18,6 +18,15 @@ jQuery(document).ready(function()
 	    $('#out').append("<p>");
 	    $('#out').append(output[2]);
 	    $('#out').append(output[3]);
+	    $('#out').append("<p>");
+	    $('#out').append("<p>");
+	    $('#out').append("<p>now");
+	    
+	    $.each(output, function(index, value)
+		   {
+            		$("#out").append(index + ": " + value + '<p>');
+        	});
+	    
     }, 'text');
 });
 </script>
