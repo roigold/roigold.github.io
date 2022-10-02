@@ -11,8 +11,9 @@ jQuery(document).ready(function()
     $.get('book.txt', function(data) 
     {
 	    var txtt=data;
-            alert(data);
-	    $('#out').html(txtt[1]);
+	    output = txtt.split(" | ");
+            alert(output[0]);
+	    $('#out').html(output[1]);
     }, 'text');
 });
 </script>
