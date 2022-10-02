@@ -13,7 +13,8 @@ jQuery(document).ready(function()
 	    var txtt=data;
 	    output = txtt.split(" | ");
             alert(output[0]);
-	    $('#out').html(output[1]);
+	    $('#out').append(output[1]);
+	    $('#out').append(output[2]);
     }, 'text');
 });
 </script>
