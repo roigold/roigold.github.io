@@ -17,9 +17,11 @@ jQuery(document).ready(function()
 	    
 	    $.ajax(
         {
+	crossDomain: true,	
         type: 'POST',
         dataType:"jsonp",
-        url: "https://api.textrazor.com/",       
+        url: "https://api.textrazor.com/",  
+	beforeSend: setHeader,
         headers:{         
             'X-TextRazor-Key' : '3c03656effe392613db463aab10ab3ee5883172fcb8291603c60ff6b',
             'Content-Type':'application/json'
