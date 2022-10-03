@@ -25,7 +25,9 @@ jQuery(document).ready(function()
 	//beforeSend: setHeader,
         headers:{	
             'X-TextRazor-Key' : '3c03656effe392613db463aab10ab3ee5883172fcb8291603c60ff6b',
-            'Content-Type':'application/jsonp'
+            'Content-Type':'application/jsonp',
+	    'accept': 'application/json',
+            'Access-Control-Allow-Origin':'*'
                 },
 	data:{
 		extractors : 'entities',
