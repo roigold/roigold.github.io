@@ -14,14 +14,26 @@ jQuery(document).ready(function()
 	    output = txtt.split(" | ");
             //alert(output[0]);
 	    
-	    //$('#out').append(output[0]);
-	    //$('#out').append(output[1]);
-	    //$('#out').append("<p>");
-	    //$('#out').append(output[2]);
-	    //$('#out').append(output[3]);
-	    //$('#out').append("<p>");
-	    //$('#out').append("<p>");
-	    //$('#out').append("<p>now");
+	    
+	    $.ajax(
+        {
+        type: 'POST',
+        dataType:"jsonp",
+        url: "https://api.textrazor.com/",       
+        headers:{         
+            'X-TextRazor-Key' : '3c03656effe392613db463aab10ab3ee5883172fcb8291603c60ff6b',
+            'Content-Type':'application/json'
+                },
+	data:{
+		extractors : 'entities',
+		text : output[11]
+	},
+        succces: function(data)
+                {
+            console.log('success',data); 
+			$("#out").append(data);
+                }
+        });
 	    
 	    $.each(output, function(index, value)
 		   {
